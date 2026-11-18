@@ -10,12 +10,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
+                echo 'Building...'
+                sh 'echo "This is Build stage"'
             }
         }
 
         stage('Test') {
             steps {
+                echo 'Testing...'
                 sh 'echo "All tests passed!"'
             }
         }
@@ -25,6 +27,7 @@ pipeline {
         success {
             echo 'Pipeline SUCCESS!'
         }
+
         failure {
             echo 'Pipeline FAILED!'
         }
